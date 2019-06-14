@@ -3,23 +3,23 @@ set nocompatible
 filetype off
 
 " add Vundle to runtime path and init
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
 
 " say tu vundle to manage itself
-Plugin 'gmarik/Vundle.vim'
+"Plugin 'gmarik/Vundle.vim'
 
 " installed plugins
 " Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'scrooloose/nerdtree'
+" Plugin 'vim-syntastic/syntastic'
 " Plugin 'ajh17/VimCompletesMe'
 " Plugin 'justmao945/vim-clang'
-Plugin 'rust-lang/rust.vim'
+"Plugin 'rust-lang/rust.vim'
 " Plugin 'Valloric/YouCompleteMe'
 
 " end of vundle part
-call vundle#end()
+"call vundle#end()
 filetype plugin indent on
 
 " --------------------- personnal config part ---------------------
@@ -42,10 +42,10 @@ syntax on		" Switch syntax highlighting on, when the terminal has colors
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Latex config
-autocmd Filetype tex setl updatetime=1
+"autocmd Filetype tex setl updatetime=1
 " let g:livepreview_previewer = 'open -a texshop'
 
-"add Ctrl-i shortcut for shebang exec
+" add Ctrl-i shortcut for shebang exec
 map <c-i> :w <bar> !%:p <cr>
 
 " map nerd tree
