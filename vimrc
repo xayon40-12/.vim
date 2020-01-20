@@ -3,23 +3,21 @@ set nocompatible
 filetype off
 
 " add Vundle to runtime path and init
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " say tu vundle to manage itself
-"Plugin 'gmarik/Vundle.vim'
+Plugin 'gmarik/Vundle.vim'
 
 " installed plugins
 " Plugin 'xuhdev/vim-latex-live-preview'
-"Plugin 'scrooloose/nerdtree'
-" Plugin 'vim-syntastic/syntastic'
-" Plugin 'ajh17/VimCompletesMe'
-" Plugin 'justmao945/vim-clang'
-"Plugin 'rust-lang/rust.vim'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'rust-lang/rust.vim'
+Plugin 'tikhomirov/vim-glsl'
 
 " end of vundle part
-"call vundle#end()
+call vundle#end()
 filetype plugin indent on
 
 " --------------------- personnal config part ---------------------
@@ -28,13 +26,15 @@ colorscheme desert
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-set nobackup		" do not keep a backup file, use versions instead
+"set nobackup		" do not keep a backup file, use versions instead
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set number		" show line number at left
+set relativenumber      " show distance from current line at left
 set mouse=a		" enable mouse usage if possible	
+set tabpagemax=100          " set number of tabs
 syntax on		" Switch syntax highlighting on, when the terminal has colors
 "set hlsearch		" Also switch on highlighting the last used search pattern.
 
