@@ -12,10 +12,10 @@ Plugin 'gmarik/Vundle.vim'
 " installed plugins
 " Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'wikitopian/hardmode'
+Plugin 'takac/vim-hardtime'
 
 " end of vundle part
 call vundle#end()
@@ -27,9 +27,8 @@ filetype plugin indent on
 " Switch syntax highlighting on, when the terminal has colors
 syntax on		
 
-" hard mode
-"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+" hardtime
+let g:hardtime_default_on = 1
 
 " search in subfolders
 set path+=**            
