@@ -15,13 +15,28 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'wikitopian/hardmode'
 
 " end of vundle part
 call vundle#end()
-filetype plugin indent on
 
 " --------------------- personnal config part ---------------------
 colorscheme desert
+
+filetype plugin indent on
+" Switch syntax highlighting on, when the terminal has colors
+syntax on		
+
+" hard mode
+"autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+
+" search in subfolders
+set path+=**            
+" display menu when searching
+set wildmenu            
+" create tag file  
+command! MakeTags !ctags -R . 
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -35,15 +50,10 @@ set number		" show line number at left
 set relativenumber      " show distance from current line at left
 set mouse=a		" enable mouse usage if possible	
 set tabpagemax=100          " set number of tabs
-syntax on		" Switch syntax highlighting on, when the terminal has colors
 "set hlsearch		" Also switch on highlighting the last used search pattern.
 
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-
-" Latex config
-"autocmd Filetype tex setl updatetime=1
-" let g:livepreview_previewer = 'open -a texshop'
 
 " add Ctrl-i shortcut for shebang exec
 map <c-i> :w <bar> !%:p <cr>
