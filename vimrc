@@ -16,6 +16,7 @@ Plugin 'dense-analysis/ale'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'takac/vim-hardtime'
+Plugin 'matze/vim-move'
 
 " end of vundle part
 call vundle#end()
@@ -29,6 +30,8 @@ syntax on
 
 " hardtime
 let g:hardtime_default_on = 1
+
+let g:move_key_modifier = 'C'
 
 " search in subfolders
 set path+=**            
