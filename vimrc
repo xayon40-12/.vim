@@ -34,6 +34,8 @@ let g:hardtime_default_on = 1
 let g:move_key_modifier = 'C'
 
 " search in subfolders
+let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
+exec "set path=".gitdir
 set path+=**            
 " display menu when searching
 set wildmenu            
