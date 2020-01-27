@@ -17,6 +17,8 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'takac/vim-hardtime'
 Plugin 'matze/vim-move'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " end of vundle part
 call vundle#end()
