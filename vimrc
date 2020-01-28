@@ -49,7 +49,12 @@ set path+=**
 " display menu when searching
 set wildmenu            
 " create tag file  
-command! MakeTags !ctags -R . 
+if empty(gitdir) 
+    command! MakeTags echo "git folder not found"
+else
+    exec "set tags+=".gitdir."/.git/tags"
+    exec "command! MakeTags !cd ".gitdir."/.git; ctags -R .."
+endif
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
