@@ -73,8 +73,5 @@ set tabpagemax=100          " set number of tabs
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 
-" add Ctrl-i shortcut for shebang exec
-map <c-i> :w <bar> !%:p <cr>
-
 " map nerd tree
 map <C-n> :NERDTreeToggle<CR>
