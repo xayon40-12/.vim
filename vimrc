@@ -20,6 +20,13 @@ Plugin 'matze/vim-move'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 
+" plugins for text object
+Plugin 'kana/vim-textobj-user'
+" search text object plugin at https://github.com/kana/vim-textobj-user/wiki
+Plugin 'kana/vim-textobj-indent'
+Plugin 'kana/vim-textobj-line'
+Plugin 'sgur/vim-textobj-parameter'
+
 " end of vundle part
 call vundle#end()
 
