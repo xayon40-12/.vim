@@ -42,16 +42,19 @@ let g:hardtime_default_on = 1
 
 let g:move_key_modifier = 'C'
 
-" search in subfolders
-let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
-exec "set path=".gitdir
-set path+=**            
 " display menu when searching
 set wildmenu            
-" create tag file  
+" find git root dir
+let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
 if empty(gitdir) 
+    " search in subfolders
+    set path=**            
+    " create tag file  
     command! MakeTags echo "git folder not found"
 else
+    " search in subfolders
+    exec "set path=".gitdir."/**"
+    " create tag file  
     exec "set tags+=".gitdir."/.git/tags"
     exec "command! MakeTags !cd ".gitdir."/.git; ctags -R .."
 endif
