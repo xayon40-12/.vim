@@ -1,4 +1,5 @@
 " ---------------------  Vundle config part  ---------------------
+"  oasenuth
 set nocompatible
 filetype off
 
@@ -44,9 +45,6 @@ let g:hardtime_default_on = 1
 " move
 let g:move_key_modifier = 'C'
 
-" gitgutter
-let g:gitgutter_map_keys = 0
-
 " display menu when searching
 set wildmenu
 " find git root dir
@@ -77,7 +75,6 @@ set relativenumber      " show distance from current line at left
 set mouse=a             " enable mouse usage if possible
 set tabpagemax=100          " set number of tabs
 "set hlsearch           " Also switch on highlighting the last used search pattern.
-set updatetime=250      " vim update time, useful for gitgutter
 
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
