@@ -20,6 +20,7 @@ Plugin 'matze/vim-move'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'dhruvasagar/vim-table-mode'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -46,6 +47,9 @@ let g:move_key_modifier = 'C'
 
 " gitgutter
 let g:gitgutter_map_keys = 0
+
+" table mode (enable with <leader>tm)
+let g:table_mode_corner = "|"
 
 " display menu when searching
 set wildmenu
