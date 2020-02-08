@@ -21,6 +21,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
+Plugin 'vim-scripts/restore_view.vim'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -39,6 +40,9 @@ filetype plugin indent on
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
 
+" find git root dir
+let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
+
 " hardtime
 let g:hardtime_default_on = 1
 
@@ -51,21 +55,26 @@ let g:gitgutter_map_keys = 0
 " table mode (enable with <leader>tm)
 let g:table_mode_corner = "|"
 
+" view (vim save currend position in file and folds)
+set viewoptions=cursor,folds,slash,unix
+if !empty(gitdir) | exec "set viewdir=".gitdir."/.git/view" | endif
+
 " display menu when searching
 set wildmenu
-" find git root dir
-let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
-if empty(gitdir) 
-    " search in subfolders
-    set path=**
-    " create tag file
+
+" create tag file
+if empty(gitdir)
     command! MakeTags echo "git folder not found"
 else
-    " search in subfolders
-    exec "set path=".gitdir."/**"
-    " create tag file
     exec "set tags+=".gitdir."/.git/tags"
     exec "command! MakeTags !cd ".gitdir."/.git; ctags -R .."
+endif
+
+" search in subfolders
+if empty(gitdir) 
+    set path=**
+else
+    exec "set path=".gitdir."/**"
 endif
 
 " allow backspacing over everything in insert mode
