@@ -22,6 +22,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/restore_view.vim'
+Plugin 'Yggdroot/indentLine'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -54,6 +55,10 @@ let g:gitgutter_map_keys = 0
 
 " table mode (enable with <leader>tm)
 let g:table_mode_corner = "|"
+
+" indentLine
+" let g:indentLine_char = '|'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " view (vim save currend position in file and folds)
 set viewoptions=cursor,folds,slash,unix
@@ -101,3 +106,6 @@ map <C-n> :NERDTreeToggle<CR>
 " show tabs and trailing spaces
 exec "set listchars=tab:\uBB\uBB,trail:\uB7"
 set list
+
+" set clipboard to X11
+set clipboard=unnamed
