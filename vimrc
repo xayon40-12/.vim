@@ -113,3 +113,7 @@ set list
 
 " set clipboard to X11
 set clipboard=unnamed
+
+" set spell checking
+"set spell
+"set complete+=kspell
