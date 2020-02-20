@@ -41,6 +41,10 @@ filetype plugin indent on
 " Switch syntax highlighting on, when the terminal has colors
 syntax on
 
+" if a file is chosed, go to its directory
+let filedir=expand("%:p:h")
+if !empty(filedir) | exec "cd ".filedir | endif
+
 " find git root dir
 let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
 
@@ -71,7 +75,7 @@ set wildmenu
 if empty(gitdir)
     command! MakeTags echo "git folder not found"
 else
-    exec "set tags+=".gitdir."/.git/tags"
+    exec "set tags=".gitdir."/.git/tags"
     exec "command! MakeTags !cd ".gitdir."/.git; ctags -R .."
 endif
 
