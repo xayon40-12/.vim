@@ -15,7 +15,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'dense-analysis/ale'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'takac/vim-hardtime'
 Plugin 'matze/vim-move'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
@@ -23,6 +22,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'vim-scripts/restore_view.vim'
 Plugin 'Yggdroot/indentLine'
+Plugin 'lervag/vimtex'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -47,9 +47,6 @@ if !empty(filedir) | exec "cd ".filedir | endif
 
 " find git root dir
 let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
-
-" hardtime
-let g:hardtime_default_on = 1
 
 " move
 let g:move_key_modifier = 'C'
@@ -117,3 +114,7 @@ set clipboard=unnamed
 " set spell checking
 "set spell
 "set complete+=kspell
+
+
+"latexmk
+map \ll <silent> exec "!latexmk -pdf -pvc ".expand("%")." >/dev/null 2>&1 &"
