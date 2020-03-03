@@ -15,14 +15,19 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'dense-analysis/ale'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'takac/vim-hardtime'
 Plugin 'matze/vim-move'
+let g:move_key_modifier = 'C'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'airblade/vim-gitgutter'
+let g:gitgutter_map_keys = 0
 Plugin 'dhruvasagar/vim-table-mode'
+let g:table_mode_corner = "|"
 Plugin 'vim-scripts/restore_view.vim'
 Plugin 'Yggdroot/indentLine'
+" let g:indentLine_char = '|'
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+Plugin 'lervag/vimtex'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -48,21 +53,6 @@ if !empty(filedir) | exec "cd ".filedir | endif
 " find git root dir
 let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
 
-" hardtime
-let g:hardtime_default_on = 1
-
-" move
-let g:move_key_modifier = 'C'
-
-" gitgutter
-let g:gitgutter_map_keys = 0
-
-" table mode (enable with <leader>tm)
-let g:table_mode_corner = "|"
-
-" indentLine
-" let g:indentLine_char = '|'
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " view (vim save currend position in file and folds)
 set viewoptions=cursor,folds,slash,unix
@@ -122,3 +112,6 @@ set clipboard=unnamed
 set cursorline
 hi cursorline cterm=none
 hi cursorlinenr cterm=reverse
+
+"latexmk
+map \ll <silent> exec "!latexmk -pdf -pvc ".expand("%")." >/dev/null 2>&1 &"
