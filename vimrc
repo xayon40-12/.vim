@@ -62,6 +62,8 @@ if !empty(filedir) | exec "cd ".filedir | endif
 " find git root dir
 let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
 
+" java linter
+if !empty(gitdir) | exec "let g:ale_java_javac_classpath = \"".gitdir."/src\"" | endif
 
 " view (vim save currend position in file and folds)
 set viewoptions=cursor,folds,slash,unix
@@ -108,7 +110,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 map <C-n> :NERDTreeToggle<CR>
 
 " show tabs and trailing spaces
-exec "set listchars=tab:\uBB\uBB,trail:\uB7"
+exec "set listchars=trail:\uB7"
 set list
 
 " set clipboard to X11
