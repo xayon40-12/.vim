@@ -28,6 +28,15 @@ Plugin 'Yggdroot/indentLine'
 " let g:indentLine_char = '|'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 Plugin 'lervag/vimtex'
+let g:tex_flavor='latex'
+let g:vimtex_view_method='mupdf'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+Plugin 'sirver/ultisnips'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -114,4 +123,4 @@ hi cursorline cterm=none
 hi cursorlinenr cterm=reverse
 
 "latexmk
-map \ll <silent> exec "!latexmk -pdf -pvc ".expand("%")." >/dev/null 2>&1 &"
+"map \ll <silent> exec "!latexmk -pdf -pvc ".expand("%")." >/dev/null 2>&1 &"
