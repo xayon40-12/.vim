@@ -96,6 +96,7 @@ set incsearch           " do incremental searching
 set number              " show line number at left
 set relativenumber      " show distance from current line at left
 set mouse=a             " enable mouse usage if possible
+set ttymouse=sgr        " needed for enabling mouse with alacritty
 set tabpagemax=100          " set number of tabs
 "set hlsearch           " Also switch on highlighting the last used search pattern.
 set updatetime=250      " vim update time, useful for gitgutter
