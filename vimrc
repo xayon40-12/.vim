@@ -103,6 +103,9 @@ set ttymouse=sgr        " needed for enabling mouse with alacritty
 set tabpagemax=100          " set number of tabs
 "set hlsearch           " Also switch on highlighting the last used search pattern.
 set updatetime=250      " vim update time, useful for gitgutter
+set undofile            " keep undo history
+"if !empty(gitdir) | exec "set undodir=".gitdir."/.git/undodir" | endif
+set undodir=~/.vim/undo/
 
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
