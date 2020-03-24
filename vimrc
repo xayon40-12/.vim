@@ -25,19 +25,18 @@ let g:gitgutter_map_keys = 0
 Plugin 'dhruvasagar/vim-table-mode'
 let g:table_mode_corner = "|"
 Plugin 'vim-scripts/restore_view.vim'
-Plugin 'Yggdroot/indentLine'
-" let g:indentLine_char = '|'
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 Plugin 'lervag/vimtex'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='mupdf'
 let g:vimtex_quickfix_mode=0
-set conceallevel=1
 let g:tex_conceal='abdmg'
 Plugin 'sirver/ultisnips'
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'iamcco/markdown-preview.nvim'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -100,12 +99,12 @@ set number              " show line number at left
 set relativenumber      " show distance from current line at left
 set mouse=a             " enable mouse usage if possible
 set ttymouse=sgr        " needed for enabling mouse with alacritty
-set tabpagemax=100          " set number of tabs
+set tabpagemax=100      " set number of tabs
 "set hlsearch           " Also switch on highlighting the last used search pattern.
 set updatetime=250      " vim update time, useful for gitgutter
 set undofile            " keep undo history
-"if !empty(gitdir) | exec "set undodir=".gitdir."/.git/undodir" | endif
 set undodir=~/.vim/undo/
+set conceallevel=2      " replacement of characters
 
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
@@ -114,7 +113,7 @@ set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
 map <C-n> :NERDTreeToggle<CR>
 
 " show tabs and trailing spaces
-exec "set listchars=trail:\uB7"
+exec "set listchars=trail:\uB7,tab:\uBB\uBB"
 set list
 
 " set clipboard to X11
