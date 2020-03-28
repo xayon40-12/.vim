@@ -1,5 +1,6 @@
 bundle/
 view/
-undo/
+undo/*
+!undo/README.md
 .netrwhist
 
