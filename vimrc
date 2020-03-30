@@ -37,6 +37,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
+Plugin 'tpope/vim-abolish'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
