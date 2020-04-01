@@ -14,7 +14,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'dense-analysis/ale'
 Plugin 'rust-lang/rust.vim'
-Plugin 'ron-rs/ron.vim'
+Plugin 'stephpy/vim-yaml'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'matze/vim-move'
 let g:move_key_modifier = 'C'
@@ -38,6 +38,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'tpope/vim-abolish'
+Plugin 'majutsushi/tagbar'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -106,6 +107,8 @@ set updatetime=250      " vim update time, useful for gitgutter
 set undofile            " keep undo history
 set undodir=~/.vim/undo/
 set conceallevel=2      " replacement of characters
+set display+=lastline
+set hidden              " permit to change file without saving the current one
 
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
