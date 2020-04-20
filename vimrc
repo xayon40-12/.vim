@@ -38,7 +38,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'tpope/vim-abolish'
-Plugin 'majutsushi/tagbar'
+Plugin 'ajh17/VimCompletesMe'
+Plugin 'jacoborus/tender.vim'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -51,7 +52,16 @@ Plugin 'sgur/vim-textobj-parameter'
 call vundle#end()
 
 " --------------------- personnal config part ---------------------
-colorscheme desert
+colorscheme tender
+
+" termguicolors
+if has("termguicolors")
+    set termguicolors
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+    set background=dark
+    set t_Co=256
+endif
 
 filetype plugin indent on
 " Switch syntax highlighting on, when the terminal has colors
@@ -63,6 +73,7 @@ if !empty(filedir) | exec "cd ".filedir | endif
 
 " find git root dir
 let gitdir=system("git rev-parse --show-toplevel 2>/dev/null | tr -d '\\n'")
+if !empty(filedir) | exec "cd ".gitdir | endif
 
 " java linter
 if !empty(gitdir) | exec "let g:ale_java_javac_classpath = \"".gitdir."/src\"" | endif
@@ -83,11 +94,8 @@ else
 endif
 
 " search in subfolders
-if empty(gitdir) 
-    set path=**
-else
-    exec "set path=".gitdir."/**"
-endif
+set path=**
+set wildignore+=**/target/**
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
