@@ -39,7 +39,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'tpope/vim-abolish'
 Plugin 'ajh17/VimCompletesMe'
-Plugin 'jacoborus/tender.vim'
+Plugin 'arcticicestudio/nord-vim'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -52,7 +52,7 @@ Plugin 'sgur/vim-textobj-parameter'
 call vundle#end()
 
 " --------------------- personnal config part ---------------------
-colorscheme tender
+colorscheme nord
 
 " termguicolors
 if has("termguicolors")
