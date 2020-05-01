@@ -25,21 +25,22 @@ let g:gitgutter_map_keys = 0
 Plugin 'dhruvasagar/vim-table-mode'
 let g:table_mode_corner = "|"
 Plugin 'vim-scripts/restore_view.vim'
-Plugin 'lervag/vimtex'
-let g:tex_flavor='latex'
-let g:vimtex_view_method='mupdf'
-let g:vimtex_quickfix_mode=0
-let g:tex_conceal='abdmg'
-Plugin 'sirver/ultisnips'
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+"Plugin 'lervag/vimtex'
+"let g:tex_flavor='latex'
+"let g:vimtex_view_method='mupdf'
+"let g:vimtex_quickfix_mode=0
+"let g:tex_conceal='abdmg'
+"Plugin 'sirver/ultisnips'
+"let g:UltiSnipsExpandTrigger = '<tab>'
+"let g:UltiSnipsJumpForwardTrigger = '<tab>'
+"let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'tpope/vim-abolish'
-Plugin 'ajh17/VimCompletesMe'
 Plugin 'arcticicestudio/nord-vim'
+"Plugin 'bwasti/vim-multiuser'
+Plugin 'ajh17/VimCompletesMe'
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -106,7 +107,7 @@ set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
 set number              " show line number at left
-set relativenumber      " show distance from current line at left
+"set relativenumber      " show distance from current line at left
 set mouse=a             " enable mouse usage if possible
 set ttymouse=sgr        " needed for enabling mouse with alacritty
 set tabpagemax=100      " set number of tabs
@@ -117,6 +118,9 @@ set undodir=~/.vim/undo/
 set conceallevel=2      " replacement of characters
 set display+=lastline
 set hidden              " permit to change file without saving the current one
+
+"to see the possible colors :so $VIMRUNTIME/syntax/hitest.vim
+set statusline=%#DiffText#%f\ %#TabLine#%=%#DiffAdd#\ %m%r%y\ char:%3b\ column:%3c\ %p%% 
 
 " enhance tab
 set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
@@ -142,3 +146,6 @@ hi cursorlinenr cterm=reverse
 
 "latexmk
 "map \ll <silent> exec "!latexmk -pdf -pvc ".expand("%")." >/dev/null 2>&1 &"
+
+" avoid Ex mode
+nnoremap Q <nop>
