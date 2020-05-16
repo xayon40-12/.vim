@@ -41,6 +41,11 @@ Plugin 'tpope/vim-abolish'
 Plugin 'arcticicestudio/nord-vim'
 "Plugin 'bwasti/vim-multiuser'
 Plugin 'ajh17/VimCompletesMe'
+Plugin 'kovisoft/paredit'
+Plugin 'l04m33/vlime', {'rtp': 'vim/'}
+au FileType lisp,scheme map <CR> ))))))))))))))))))))))))))))))):call vlime#plugin#SendToREPL(vlime#ui#CurExprOrAtom())<CR>:call search('^[^;]\+')<CR>
+;
+
 
 " plugins for text object
 Plugin 'kana/vim-textobj-user'
@@ -149,3 +154,4 @@ hi cursorlinenr cterm=reverse
 
 " avoid Ex mode
 nnoremap Q <nop>
+
