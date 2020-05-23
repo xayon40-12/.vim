@@ -43,7 +43,8 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'kovisoft/paredit'
 Plugin 'l04m33/vlime', {'rtp': 'vim/'}
-au FileType lisp,scheme map <CR> ))))))))))))))))))))))))))))))):call vlime#plugin#SendToREPL(vlime#ui#CurExprOrAtom())<CR>:call search('^[^;]\+')<CR>
+au FileType lisp,scheme map <space> ))))))))))))))))))))))))))))))):call vlime#plugin#SendToREPL(vlime#ui#CurExprOrAtom())<CR>:call search('^[^;]\+')<CR>
+"au FileType lisp,scheme map <space> :call vlime#plugin#SendToREPL(vlime#ui#CurTopExpr())<CR>
 ;
 
 
