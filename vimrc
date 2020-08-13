@@ -13,6 +13,8 @@ Plugin 'gmarik/Vundle.vim'
 " Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'scrooloose/nerdtree'
 Plugin 'dense-analysis/ale'
+let g:ale_linters = {'markdown': ['languagetool','proselint']}
+let g:ale_languagetool_executable = '~/s/LanguageTool-4.9.1/langtool'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'tikhomirov/vim-glsl'
@@ -46,6 +48,9 @@ Plugin 'l04m33/vlime', {'rtp': 'vim/'}
 au FileType lisp,scheme map <space> ))))))))))))))))))))))))))))))):call vlime#plugin#SendToREPL(vlime#ui#CurExprOrAtom())<CR>:call search('^[^;]\+')<CR>
 "au FileType lisp,scheme map <space> :call vlime#plugin#SendToREPL(vlime#ui#CurTopExpr())<CR>
 ;
+Plugin 'itchyny/vim-haskell-indent'
+Plugin 'jpalardy/vim-slime'
+"let g:slime_target = "x11"
 
 
 " plugins for text object
@@ -112,6 +117,7 @@ set history=50          " keep 50 lines of command line history
 set ruler               " show the cursor position all the time
 set showcmd             " display incomplete commands
 set incsearch           " do incremental searching
+"set hlsearch           " highlight search
 set number              " show line number at left
 "set relativenumber      " show distance from current line at left
 set mouse=a             " enable mouse usage if possible
@@ -156,3 +162,5 @@ hi cursorlinenr cterm=reverse
 " avoid Ex mode
 nnoremap Q <nop>
 
+" spelling
+autocmd FileType markdown setlocal spell
