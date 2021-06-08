@@ -12,9 +12,9 @@ Plugin 'gmarik/Vundle.vim'
 " installed plugins
 " Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'scrooloose/nerdtree'
-Plugin 'dense-analysis/ale'
-let g:ale_linters = {'markdown': ['languagetool','proselint']}
-let g:ale_languagetool_executable = '~/s/LanguageTool-4.9.1/langtool'
+" Plugin 'dense-analysis/ale'
+" let g:ale_linters = {'markdown': ['languagetool','proselint']}
+" let g:ale_languagetool_executable = '~/s/LanguageTool-4.9.1/langtool'
 Plugin 'rust-lang/rust.vim'
 Plugin 'stephpy/vim-yaml'
 Plugin 'tikhomirov/vim-glsl'
@@ -44,12 +44,12 @@ Plugin 'arcticicestudio/nord-vim'
 "Plugin 'bwasti/vim-multiuser'
 Plugin 'ajh17/VimCompletesMe'
 Plugin 'kovisoft/paredit'
-Plugin 'l04m33/vlime', {'rtp': 'vim/'}
-au FileType lisp,scheme map <space> ))))))))))))))))))))))))))))))):call vlime#plugin#SendToREPL(vlime#ui#CurExprOrAtom())<CR>:call search('^[^;]\+')<CR>
+" Plugin 'l04m33/vlime', {'rtp': 'vim/'}
+" au FileType lisp,scheme map <space> ))))))))))))))))))))))))))))))):call vlime#plugin#SendToREPL(vlime#ui#CurExprOrAtom())<CR>:call search('^[^;]\+')<CR>
 "au FileType lisp,scheme map <space> :call vlime#plugin#SendToREPL(vlime#ui#CurTopExpr())<CR>
 ;
 Plugin 'itchyny/vim-haskell-indent'
-Plugin 'jpalardy/vim-slime'
+" Plugin 'jpalardy/vim-slime'
 "let g:slime_target = "x11"
 
 
